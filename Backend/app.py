@@ -36,7 +36,7 @@ class BookApi(MethodView):
                     'id':book.id,
                     'book_name':book.book_name,
                     'book_type':book.book_type,
-                    'book_prize':book.book_prize,
+                    'book_price':book.book_price,
                     'book_number':book.book_number,
                     'book_publisher':book.book_publisher,
                     'author':book.author,
@@ -57,7 +57,7 @@ class BookApi(MethodView):
                     'id':book.id,
                     'book_name':book.book_name,
                     'book_type':book.book_type,
-                    'book_prize':book.book_prize,
+                    'book_price':book.book_price,
                     'book_number':book.book_number,
                     'book_publisher':book.book_publisher,
                     'author':book.author,
@@ -76,7 +76,7 @@ class BookApi(MethodView):
         book.book_number = form.get('book_number')
         book.book_name = form.get('book_name')
         book.book_type = form.get('book_type')
-        book.book_prize = form.get('book_prize')
+        book.book_price = form.get('book_price')
         book.author = form.get('author')
         book.book_publisher = form.get('book_publisher')
         db.session.add(book)
@@ -112,7 +112,7 @@ class BookApi(MethodView):
         book.book_number = request.json.get('book_number')
         book.book_name = request.json.get('book_name')
         book.book_type = request.json.get('book_type')
-        book.book_prize = request.json.get('book_prize')
+        book.book_price = request.json.get('book_price')
         book.author = request.json.get('author')
         book.book_publisher = request.json.get('book_publisher')
         db.session.commit()

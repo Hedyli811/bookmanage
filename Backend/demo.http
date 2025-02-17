@@ -5,7 +5,7 @@ Content-Type: application/json;charset=utf-8
     "author": "retdsf",
     "book_name": "sdf",
     "book_number": "003",
-    "book_prize": 39.9,
+    "book_price": 39.9,
     "book_publisher": "dfs",
     "book_type": "sdf"
 }
@@ -24,7 +24,7 @@ Content-Type: application/json;charset=utf-8
     "author": "ttt",
     "book_name": "sdf",
     "book_number": "003",
-    "book_prize": 72.3,
+    "book_price": 72.3,
     "book_publisher": "dfes111",
     "book_type": "swedf"
 }
