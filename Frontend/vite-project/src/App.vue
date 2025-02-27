@@ -19,11 +19,19 @@ onMounted(() => {
 
 // Delete data
 const handleDelete = (index, scope) => {
-  console.log(index, scope.id);
+
+   ElMessageBox.confirm("Are you sure you want to delete this book?")
+    .then(() => {
+       console.log(index, scope.id);
   console.log(`http://localhost:5000/books/${scope.id}`);
   axios.delete(`http://localhost:5000/books/${scope.id}`).then(() => {
     getStudents();
   });
+    })
+    .catch(() => {
+      console.log("deletion cancelled")
+    });
+
 };
 
 /* Adding Form */
