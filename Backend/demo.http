@@ -2,12 +2,12 @@ POST http://localhost:5000/books
 Content-Type: application/json;charset=utf-8
 
 {
-    "author": "retdsf",
-    "book_name": "sdf",
-    "book_number": "003",
-    "book_price": 39.9,
-    "book_publisher": "dfs",
-    "book_type": "sdf"
+    "author": "New Author",
+    "book_name": "New Book Name",
+    "book_number": "004",
+    "book_price": 45.0,
+    "book_publisher": "New Publisher",
+    "book_type": "New Type"
 }
 
 ###
@@ -21,14 +21,13 @@ PUT http://localhost:5000/books/3
 Content-Type: application/json;charset=utf-8
 
 {
-    "author": "ttt",
-    "book_name": "sdf",
+    "author": "Updated Author",
+    "book_name": "Updated Book Name",
     "book_number": "003",
-    "book_price": 72.3,
-    "book_publisher": "dfes111",
-    "book_type": "swedf"
+    "book_price": 99.9,
+    "book_publisher": "Updated Publisher",
+    "book_type": "Updated Type"
 }
-
 ### 
 
 DELETE http://localhost:5000/books/3
