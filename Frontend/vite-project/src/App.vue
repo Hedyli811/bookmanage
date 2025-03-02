@@ -4,7 +4,7 @@ import { reactive, ref, onMounted } from "vue";
 import { ElMessageBox } from "element-plus";
 
 const books = reactive([]);
-const getStudents = () => {
+const getBooks = () => {
   axios.get("http://localhost:5000/books").then((res) => {
     books.splice(0, books.length); // Clear the old data
     books.push(...res.data.results); // Unpack the new data
@@ -14,24 +14,22 @@ const getStudents = () => {
 
 // After the page is rendered, add data
 onMounted(() => {
-  getStudents();
+  getBooks();
 });
 
 // Delete data
 const handleDelete = (index, scope) => {
-
-   ElMessageBox.confirm("Are you sure you want to delete this book?")
+  ElMessageBox.confirm("Are you sure you want to delete this book?")
     .then(() => {
-       console.log(index, scope.id);
-  console.log(`http://localhost:5000/books/${scope.id}`);
-  axios.delete(`http://localhost:5000/books/${scope.id}`).then(() => {
-    getStudents();
-  });
+      console.log(index, scope.id);
+      console.log(`http://localhost:5000/books/${scope.id}`);
+      axios.delete(`http://localhost:5000/books/${scope.id}`).then(() => {
+        getBooks();
+      });
     })
     .catch(() => {
-      console.log("deletion cancelled")
+      console.log("deletion cancelled");
     });
-
 };
 
 /* Adding Form */
@@ -53,7 +51,7 @@ const submitForm = (formEl) => {
   axios.post("http://localhost:5000/books/", book_form).then(() => {
     add_dialog_visible.value = false;
     formEl.resetFields();
-    getStudents();
+    getBooks();
   });
 };
 
@@ -87,7 +85,7 @@ const submitEditForm = (formEl) => {
     .then((res) => {
       formEl.resetFields();
       edit_dialog_visible.value = false;
-      getStudents();
+      getBooks();
     });
 };
 </script>
